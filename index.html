@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedPoint - Your Health, Our Priority</title>
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm py-4 px-6 fixed w-full z-50">
+        <div class="max-w-[98%] mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span class="text-2xl font-bold text-gray-800">MedPoint</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-gray-600 hover:text-teal-600 font-medium transition duration-200">Home</a>
+                <a href="#dashboard" class="text-gray-600 hover:text-teal-600 font-medium transition duration-200">Live Status</a>
+                <a href="#schedule" class="px-5 py-2 bg-teal-500 text-white font-medium rounded-full hover:bg-teal-600 transition duration-200 shadow-md">Book Now</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-600">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-white py-20 px-6 mt-16 md:py-32" style="background-color: #f7fcfd;">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left md:w-1/2">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-800 leading-tight">
+                    Your Health, <br><span class="text-blue-700">Our Priority</span>
+                </h1>
+                <p class="mt-4 text-lg text-gray-600 max-w-md mx-auto md:mx-0">
+                    Check real-time doctor availability and book your slot instantly.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#schedule" class="inline-block px-8 py-4 bg-teal-500 text-white font-semibold rounded-full text-lg shadow-lg hover:bg-teal-600 transform hover:-translate-y-1 transition duration-300">
+                        Book Appointment
+                    </a>
+                    <a href="#dashboard" class="inline-block px-8 py-4 bg-white text-teal-600 border border-teal-200 font-semibold rounded-full text-lg shadow-sm hover:bg-teal-50 transform hover:-translate-y-1 transition duration-300">
+                        View Schedule
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-72 h-72">
+                    <div class="absolute inset-0 border-[3px] border-teal-200 rounded-full animate-pulse-slow" style="width: 80%; height: 80%; top: 10%; left: 10%;"></div>
+                    <div class="absolute inset-0 bg-white rounded-xl shadow-xl border border-gray-100 flex items-center justify-center" style="width: 70%; height: 70%; top: 15%; left: 15%;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 text-teal-400" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content: Booking Form -->
+    <main class="flex-grow p-4 md:p-8 relative -mt-16 sm:-mt-20 md:-mt-24 lg:-mt-32 z-10" id="schedule">
+        <div class="max-w-5xl mx-auto bg-white p-6 sm:p-10 rounded-xl shadow-2xl">
+            
+            <h2 class="text-2xl font-semibold mb-6 text-center text-gray-800">Schedule Appointment</h2>
+            
+            <form id="appointmentForm" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Full Name -->
+                <div class="lg:col-span-1">
+                    <label for="patientName" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="patientName" name="patientName" required placeholder="Full Name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                </div>
+
+                <!-- Email -->
+                <div class="lg:col-span-1">
+                    <label for="patientEmail" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" id="patientEmail" name="patientEmail" required placeholder="Email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500">
+                </div>
+
+                <!-- Doctor Select -->
+                <div class="lg:col-span-1">
+                    <label for="doctorSelect" class="block text-sm font-medium text-gray-700 mb-1">Select Specialist</label>
+                    <select id="doctorSelect" name="doctorSelect" required class="w-full px-4 py-2 border border-gray-300 rounded-lg bg-white focus:ring-teal-500 focus:border-teal-500">
+                        <option value="">Loading Doctors...</option>
+                    </select>
+                </div>
+
+                <!-- Date/Time Group -->
+                <div class="lg:col-span-1 flex gap-2">
+                    <div class="w-1/2">
+                        <label for="appointmentDate" class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                        <input type="date" id="appointmentDate" name="appointmentDate" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-sm">
+                    </div>
+                    <div class="w-1/2">
+                        <label for="appointmentTime" class="block text-sm font-medium text-gray-700 mb-1">Time</label>
+                        <input type="time" id="appointmentTime" name="appointmentTime" required class="w-full px-2 py-2 border border-gray-300 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-sm">
+                    </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="lg:col-span-4 pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button type="submit" id="bookBtn" class="flex-1 sm:flex-none px-8 py-3 bg-teal-500 text-white font-semibold rounded-lg shadow-md hover:bg-teal-600 transition duration-150 transform hover:scale-[1.01]">
+                        Confirm Booking
+                    </button>
+                    <button type="reset" id="resetBtn" class="flex-1 sm:flex-none px-8 py-3 bg-gray-200 text-gray-700 font-semibold rounded-lg shadow-md hover:bg-gray-300 transition duration-150">
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+            
+            <!-- Loading/Success Feedback -->
+            <div id="formFeedback" class="hidden mt-4 text-center p-3 rounded-lg text-sm font-medium"></div>
+        </div>
+    </main>
+    
+    <!-- Live Dashboard Section -->
+    <section id="dashboard" class="w-full max-w-[98%] mx-auto px-4 md:px-8 mt-12 mb-16">
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
+            
+            <!-- Left Column: Upcoming Appointments (The "Schedule") -->
+            <div class="xl:col-span-8 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden flex flex-col min-h-[600px]">
+                <div class="p-6 border-b bg-gray-50 flex justify-between items-center">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800">📅 Clinic Schedule</h2>
+                        <p class="text-sm text-gray-500">Real-time list of upcoming appointments</p>
+                    </div>
+                    <span class="bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full animate-pulse">LOCAL MODE</span>
+                </div>
+                
+                <!-- Table Header -->
+                <div class="grid grid-cols-12 gap-4 px-6 py-3 bg-gray-50 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    <div class="col-span-3">Time</div>
+                    <div class="col-span-4">Specialist</div>
+                    <div class="col-span-5">Patient</div>
+                </div>
+
+                <!-- Scrollable List -->
+                <div id="appointmentsList" class="flex-grow overflow-y-auto custom-scroll p-2">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+
+            <!-- Right Column: Doctor Availability -->
+            <div class="xl:col-span-4 flex flex-col gap-6">
+                
+                <!-- Availability Card -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 h-full flex flex-col min-h-[600px]">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">🧑‍⚕️ Doctor Availability</h2>
+                    
+                    <div id="doctorListContainer" class="flex-grow overflow-y-auto custom-scroll pr-2">
+                         <!-- Populated by JS -->
+                    </div>
+                    
+                    <!-- Symptom Checker Mini-Tool -->
+                    <div class="mt-6 pt-4 border-t bg-blue-50 -mx-6 -mb-6 p-6">
+                        <h3 class="font-semibold text-blue-800 mb-2 text-sm">Need a Recommendation?</h3>
+                        <div class="flex gap-2">
+                            <input id="symptomInput" type="text" placeholder="Describe symptoms (e.g. chest pain)" class="flex-grow text-sm px-3 py-2 border border-blue-200 rounded-lg focus:outline-none focus:border-blue-400">
+                            <button id="recommendBtn" class="bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-lg hover:bg-blue-700">Find Doc</button>
+                        </div>
+                        <div id="recommendationOutput" class="mt-2 text-xs text-gray-600 hidden"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="mt-8 text-center text-xs text-gray-400">
+            User ID: <span id="userIdDisplay" class="font-mono">Local-User-1</span>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6 text-sm mt-auto">
+        <p>&copy; 2025 MedPoint. All rights reserved.</p>
+        <p>Designed with ❤️ for better healthcare.</p>
+        <p>By Akash & Nitesh</p>
+
+    </footer>
+
+    <!-- Custom Logic Script -->
+    <script src="script.js"></script>
+</body>
+</html>
