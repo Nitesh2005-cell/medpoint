@@ -1,10 +1,10 @@
 // --- 1. MOCK DATA ---
 const INITIAL_DOCTORS = [
     { specialty: "Cardiology", name: "Dr. Anya Sharma", status: "Available", bio: "Heart health." },
-    { specialty: "Pediatrics", name: "Dr. Ben Carter", status: "Busy", bio: "Children." },
-    { specialty: "Dermatology", name: "Dr. Chloe Lee", status: "Available", bio: "Skin care." },
-    { specialty: "Orthopedics", name: "Dr. David Cruz", status: "Available", bio: "Bones & Joints." },
-    { specialty: "General", name: "Dr. Eva Klein", status: "Available", bio: "General care." }
+    { specialty: "Pediatrics", name: "Dr. Rajesh Kumar", status: "Busy", bio: "Children." },
+    { specialty: "Dermatology", name: "Dr. Priya Patel", status: "Available", bio: "Skin care." },
+    { specialty: "Orthopedics", name: "Dr. Vikram Singh", status: "Available", bio: "Bones & Joints." },
+    { specialty: "General", name: "Dr. Anjali Gupta", status: "Available", bio: "General care." }
 ];
 
 // --- 2. APP INITIALIZATION ---
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load Doctors immediately
     renderDoctorList(INITIAL_DOCTORS);
     updateDoctorSelect(INITIAL_DOCTORS);
-    
+
     // Load Appointments from LocalStorage
     loadAppointments();
 
@@ -53,7 +53,7 @@ form.addEventListener('submit', (e) => {
     formFeedback.className = "mt-4 text-center p-3 rounded-lg text-sm font-medium bg-green-100 text-green-700 fade-in";
     formFeedback.innerHTML = `✅ Appointment Confirmed for <strong>${doctor}</strong> on ${date} at ${time}!`;
     formFeedback.classList.remove('hidden');
-    
+
     form.reset();
     loadAppointments(); // Refresh the list
 
@@ -135,11 +135,11 @@ document.getElementById('recommendBtn').addEventListener('click', () => {
     const val = document.getElementById('symptomInput').value.toLowerCase();
     const output = document.getElementById('recommendationOutput');
     let rec = "General";
-    
-    if(val.includes('heart') || val.includes('chest')) rec = "Cardiology";
-    else if(val.includes('child') || val.includes('baby')) rec = "Pediatrics";
-    else if(val.includes('skin') || val.includes('rash')) rec = "Dermatology";
-    else if(val.includes('bone') || val.includes('knee')) rec = "Orthopedics";
+
+    if (val.includes('heart') || val.includes('chest')) rec = "Cardiology";
+    else if (val.includes('child') || val.includes('baby')) rec = "Pediatrics";
+    else if (val.includes('skin') || val.includes('rash')) rec = "Dermatology";
+    else if (val.includes('bone') || val.includes('knee')) rec = "Orthopedics";
 
     output.innerHTML = `Recommendation: <strong>${rec}</strong>. <a href="#schedule" class="text-blue-600 underline" onclick="document.getElementById('doctorSelect').value='${rec}'">Select</a>`;
     output.classList.remove('hidden');
